@@ -130,6 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 352840597}
+  - component: {fileID: 352840598}
   m_Layer: 0
   m_Name: Ring 6
   m_TagString: Untagged
@@ -152,6 +153,21 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352840598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352840596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: -2
+  rotationAngle: 0
+  rotatingObject: {fileID: 352840596}
 --- !u!1 &365271927
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!136 &365271930
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -416,6 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!136 &406659459
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -486,6 +504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 467698375}
+  - component: {fileID: 467698376}
   m_Layer: 0
   m_Name: Ring 2
   m_TagString: Untagged
@@ -508,6 +527,21 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467698376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467698374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: 7
+  rotationAngle: 0
+  rotatingObject: {fileID: 467698374}
 --- !u!1 &543909171
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 585998517}
+  - component: {fileID: 585998518}
   m_Layer: 0
   m_Name: Ring 7
   m_TagString: Untagged
@@ -579,6 +614,21 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &585998518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585998516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: -5
+  rotationAngle: 0
+  rotatingObject: {fileID: 585998516}
 --- !u!1 &631866404
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!136 &631866407
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -789,6 +840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 788658926}
+  - component: {fileID: 788658927}
   m_Layer: 0
   m_Name: Ring 3
   m_TagString: Untagged
@@ -811,6 +863,21 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &788658927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788658925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: 6
+  rotationAngle: 0
+  rotatingObject: {fileID: 788658925}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +1002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1440830561}
+  - component: {fileID: 1440830562}
   m_Layer: 0
   m_Name: Ring 5
   m_TagString: Untagged
@@ -957,6 +1025,21 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440830562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440830560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: -0.05
+  rotationAngle: 0
+  rotatingObject: {fileID: 1440830560}
 --- !u!1 &1467631930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!136 &1467631933
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1114,6 +1198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!136 &1514240948
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1284,6 +1369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!1 &1753691886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!136 &1753691889
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1402,6 +1489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781579518}
+  - component: {fileID: 1781579519}
   m_Layer: 0
   m_Name: Ring 1
   m_TagString: Untagged
@@ -1424,6 +1512,21 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1781579519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781579517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: 8
+  rotationAngle: 0
+  rotatingObject: {fileID: 1781579517}
 --- !u!1 &1880355207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,6 +1536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1880355208}
+  - component: {fileID: 1880355209}
   m_Layer: 0
   m_Name: Ring 8
   m_TagString: Untagged
@@ -1455,6 +1559,21 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880355209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880355207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: -12
+  rotationAngle: 0
+  rotatingObject: {fileID: 1880355207}
 --- !u!1 &2028324614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPeriod: 0
   rotationAngle: 0
+  rotatingObject: {fileID: 0}
 --- !u!136 &2028324617
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1573,6 +1693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2028674014}
+  - component: {fileID: 2028674015}
   m_Layer: 0
   m_Name: Ring 4
   m_TagString: Untagged
@@ -1595,3 +1716,18 @@ Transform:
   m_Father: {fileID: 543909172}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028674015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028674013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationPeriod: 2
+  rotationAngle: 0
+  rotatingObject: {fileID: 2028674013}
