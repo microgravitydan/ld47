@@ -5,16 +5,20 @@ using UnityEngine;
 public class ShipRotation : MonoBehaviour {
     // Variables
     [SerializeField]
-    public float RotationPeriod; //Rotation Period (8seconds/rotation for mars)
+    public float rotationPeriod; //Rotation Period (8seconds/rotation for mars)
+    [SerializeField]
+    private float rotationAngle;
+    private GameObject rotatingObject;
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         
     }
 
     // Update is called once per frame
     void Update() {
         //Rotate
-
+        rotationAngle = Time.deltaTime - rotationPeriod;
+        rotatingObject.transform.localRotation = rotationAngle;
     }
 }
