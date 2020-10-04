@@ -1,19 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class ShipRotation : MonoBehaviour {
     [SerializeField]
     public float rotationPeriod; //Rotation Period (8seconds/rotation for mars)
     [SerializeField]
     private bool xRotAxis, yRotAxis, zRotAxis;
+    [SerializeField]
+    private int ringNumber;
+    private int ringChoice;
 
-    // Start is called before the first frame update
-    void Awake() {
+    UnityEvent m_Ring;
+
+    void Start() {
+        if (m_Ring == null)
+            m_Ring = new UnityEvent();
+
+        m_Ring.AddListener(delegate{RightHandThrust(ringChoice);});
+        m_Ring.AddListener(delegate{LeftHandThrust(ringChoice);});
+
         rotationPeriod = 4/rotationPeriod;
     }
 
-    // Update is called once per frame
+    void Awake() {
+    }
+
     void Update() {
         //Rotate
         if (xRotAxis == true ) {
@@ -24,6 +38,20 @@ public class ShipRotation : MonoBehaviour {
             transform.Rotate(0, 0, rotationPeriod, Space.Self);
         } else {
             transform.rotation = Quaternion.identity;
+        }
+    }
+
+    void RightHandThrust(int ringChoice) {
+        Debug.Log(ringNumber + "Right Hand Thrust");
+        if (ringChoice == ringNumber) {
+            rotationPeriod += 0.001f;
+        }
+    }
+
+    void LeftHandThrust (int ringChoice) {
+        Debug.Log(ringNumber + "Left Hand Thrust");
+        if (ringChoice == ringNumber) {
+            rotationPeriod -= 0.001f;
         }
     }
 }
