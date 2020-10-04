@@ -2,6 +2,8 @@
 
 Ludum Dare 47 Compo - Stuck in a Loop
 
+Flight Sagittarius 240
+
 ## Outline
     * ArtificialGravity
         * 0.38 Gravity on floor

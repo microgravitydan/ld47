@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HologramBlue
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 76375736e0ab54fe880fcbd444336f28,
+    type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _ENVIRONMENTREFLECTIONS_OFF
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3050
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses:
   - SHADOWCASTER
   m_SavedProperties:
@@ -92,6 +92,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
+    - Color_4562A436: {r: 0, g: 0.9800043, b: 1, a: 0}
+    - Color_AC1E9C59: {r: 0.008143453, g: 0.2682671, b: 0.5754717, a: 0}
     - _BaseColor: {r: 0, g: 0.8070264, b: 1, a: 0.1764706}
     - _Color: {r: 0, g: 0.8070264, b: 1, a: 0.1764706}
     - _EmissionColor: {r: 0, g: 0.20588236, b: 0.25, a: 1}
