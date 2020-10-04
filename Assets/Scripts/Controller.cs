@@ -9,6 +9,8 @@ public class Controller : MonoBehaviour {
     private int ringChoice = 1;
     [SerializeField]
     private GameObject ring1, ring2, ring3, ring4, ring5, ring6, ring7, ring8;
+    [SerializeField]
+    private GameObject ringUI1, ringUI2, ringUI3, ringUI4, ringUI5, ringUI6, ringUI7, ringUI8;
     private GameObject actionTarget;
     [SerializeField]
     private float debounce = 0;

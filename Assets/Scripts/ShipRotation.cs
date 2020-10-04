@@ -12,6 +12,11 @@ public class ShipRotation : MonoBehaviour {
     [SerializeField]
     private int ringNumber;
     private int ringChoice;
+    [SerializeField]
+    private float ringAngle;
+
+    [SerializeField]
+    private GameObject ringUI;
 
     UnityEvent m_Ring;
 
@@ -37,8 +42,15 @@ public class ShipRotation : MonoBehaviour {
         } else if (zRotAxis == true) {
             transform.Rotate(0, 0, rotationPeriod, Space.Self);
         } else {
-            transform.rotation = Quaternion.identity;
         }
+        
+        // Get ringAngle and send to UI
+        ringAngle = transform.eulerAngles.x;
+        if (ringAngle < 0) {
+            ringAngle += 360;
+        }
+        //Debug.Log(ringNumber + " " +transform.eulerAngles);
+        ringUI.SendMessage("RingSpeed", ringAngle);
     }
 
     void RightHandThrust(int ringChoice) {
