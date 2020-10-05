@@ -71,7 +71,11 @@ public class Leela : MonoBehaviour {
             pausePanel.gameObject.SetActive(true);
             if (Input.GetButtonDown("Cancel")){
 				gamePaused = false;
-			}
+			} else if (Input.GetButtonDown("Restart")) {
+                Restart();
+            } else if (Input.GetButtonDown("Quit")) {
+                Quit();
+            }
         } else {
             // Manage Pause Screen
             Time.timeScale = 1;
