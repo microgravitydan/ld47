@@ -47,7 +47,7 @@ public class Leela : MonoBehaviour {
     private float debounce = 0;
     private float debounceAmount = 0.2f;
     private float lockDebounce = 0;
-    private float lockDebounceAmount = 1.0f;
+    private float lockDebounceAmount = 1.5f;
 
     // UI
     [SerializeField]
@@ -56,6 +56,15 @@ public class Leela : MonoBehaviour {
     private GameObject winPanel;
     [SerializeField]
     private GameObject gameOverPanel;
+
+    // Audio
+    [SerializeField]
+    private AudioClip lockAffirm;
+    [SerializeField]
+    private AudioClip lockFail;
+    [SerializeField]
+    private AudioSource audioSource;
+
 
     void Start() {
         // Set initial ringVelocity for each ring
@@ -187,9 +196,11 @@ public class Leela : MonoBehaviour {
                         if (ringStatus[0] == "Lockable") {
                             ringStatus[0] = "Locked";
                             ringLocked[0] = true;
+                            audioSource.PlayOneShot(lockAffirm);
                         } else if (ringStatus[0] == "Locked") {
                             ringStatus[0] = "Spinning";
                             ringLocked[0] = false;
+                            audioSource.PlayOneShot(lockFail);
                         }
                     // Rings 1-7
                     } else if (ringStatus[ringSelected] == "Lockable") {
@@ -199,16 +210,20 @@ public class Leela : MonoBehaviour {
                             ringLocked[ringSelected] = true;
                             ringVelocity[ringSelected] = ringVelocity[ringSelected-1];
                             Debug.Log("Ring " + ringSelected + " Locked");
+                            audioSource.PlayOneShot(lockAffirm);
                         } else {
                             Debug.Log("Spacebar, Too fast");
                             ringStatus[ringSelected-1] = "Spinning";
                             ringLocked[ringSelected-1] = false;
                             ringVelocity[ringSelected-1] = ringVelocity[ringSelected];
+                            audioSource.PlayOneShot(lockFail);
                         }
                     } else if (ringStatus[ringSelected] == "Locked") {
                         ringStatus[ringSelected] = "Selected";
                         ringLocked[ringSelected] = false;
+                        audioSource.PlayOneShot(lockFail);
                     } else {
+                        audioSource.PlayOneShot(lockFail);
                     }
                     lockDebounce = lockDebounceAmount;
                 }
