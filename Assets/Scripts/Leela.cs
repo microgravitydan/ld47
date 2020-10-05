@@ -30,10 +30,18 @@ public class Leela : MonoBehaviour {
     private int ringSelected = 0;
     [SerializeField]
     private float thrustAmount = 0.1f; // Degrees per second per second
+    [SerializeField]
+    private float ringOneMin = 30;
+    [SerializeField]
+    private float ringOneMax = 180;
+    [SerializeField]
+    private float ringMax = 360;
 
     //Controls
     private float debounce = 0;
     private float debounceAmount = 0.2f;
+    private float lockDebounce = 0;
+    private float lockDebounceAmount = 1.0f;
 
 
     void Start() {
@@ -63,11 +71,13 @@ public class Leela : MonoBehaviour {
         }
 
         // Ring Velocity
-        if (Input.GetAxis("Horizontal") > 0.02f) {
-            ringVelocity[ringSelected] += thrustAmount;
-        } else if (Input.GetAxis("Horizontal") < -0.02f) {
-            ringVelocity[ringSelected] -= thrustAmount;
-        } else {};
+        if (ringLocked[ringSelected] == false) {
+            if (Input.GetAxis("Horizontal") > 0.02f) {
+                ringVelocity[ringSelected] += thrustAmount;
+            } else if (Input.GetAxis("Horizontal") < -0.02f) {
+                ringVelocity[ringSelected] -= thrustAmount;
+            } else {};
+        }
 
         // Ring Position
         for (int i = 0; i < 8; i++) {
@@ -80,17 +90,66 @@ public class Leela : MonoBehaviour {
         }
 
         // Determine State
+        // For ring 0
+        if (ringLocked[0] == false) {
+            if (Mathf.Abs(ringVelocity[0]) >= ringOneMin & Mathf.Abs(ringVelocity[0]) <= ringOneMax) {
+                ringStatus[0] = "Lockable";
+            } else if (ringSelected == 0) {
+                ringStatus[0] = "Selected";
+            } else {
+                ringStatus[0] = "Spinning";
+            }
+        }
+        // For rings 1-7
         for (int i = 1; i < 8; i++) {
             if (ringLocked[i-1] & ringLocked[i] == false) {
                 if (ringPosition[i] > ringPosition[i-1] - angleWiggle & ringPosition[i] < ringPosition[i-1] + angleWiggle) {
                     ringStatus[i] = "Lockable";
+                } else if (i == ringSelected) {
+                    ringStatus[i] = "Selected";
                 } else {
                     ringStatus[i] = "Spinning";
                 }
+            } else if (ringLocked[i] == true) {
+                ringStatus[i] = "Locked";
             }
         }
 
+        // TODO: OVERSPEED
+            // If ring goes beyond ringMax, gameover.
+
         // Try to Lock
+        if (lockDebounce <= 0) {
+            if (Input.GetButtonDown("Jump")){
+                // Ring 0
+                if (ringSelected == 0){
+                    if (ringStatus[0] == "Lockable") {
+                        ringStatus[0] = "Locked";
+                        ringLocked[0] = true;
+                    } else if (ringStatus[0] == "Locked") {
+                        ringStatus[0] = "Spinning";
+                        ringLocked[0] = false;
+                    }
+                // Rings 1-7
+                } else if (ringStatus[ringSelected] == "Lockable") {
+                    if (ringVelocity[ringSelected] > ringVelocity[ringSelected-1] - speedWiggle & ringVelocity[ringSelected] < ringVelocity[ringSelected-1] + speedWiggle) {
+                        Debug.Log("Spacebar, Locked");
+                        ringStatus[ringSelected] = "Locked";
+                        ringLocked[ringSelected] = true;
+                        ringVelocity[ringSelected] = ringVelocity[ringSelected-1];
+                        Debug.Log("Ring " + ringSelected + " Locked");
+                    } else {
+                        Debug.Log("Spacebar, Too fast");
+                        ringStatus[ringSelected-1] = "Spinning";
+                    }
+                } else if (ringStatus[ringSelected] == "Locked") {
+                    ringStatus[ringSelected] = "Selected";
+                    ringLocked[ringSelected] = false;
+                } else {
+                }
+                lockDebounce = lockDebounceAmount;
+            }
+        }
 
         // Break previous ring if Velocity is greater than speedWiggle
 
@@ -111,6 +170,9 @@ public class Leela : MonoBehaviour {
         // Update debounce
         if (debounce > 0) {
             debounce -= Time.deltaTime;
+        }
+        if (lockDebounce > 0) {
+            lockDebounce -= Time.deltaTime;
         }
     }
 }
