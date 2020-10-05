@@ -46,6 +46,7 @@ The second ring has to match the speed and position of the first ring before you
     * Graphics
         * Fade stars on sunny side
         * Improved Hologram
+        * Camera Sway
     * Audio
         * Music
         * Ring Texture Shader
