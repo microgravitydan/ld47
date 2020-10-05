@@ -39,7 +39,8 @@ public class Leela : MonoBehaviour {
     private float ringMax = 360;
 
     // Score Tracking
-
+    private float winTime = 0;
+    private float winGravity;
 
     // Controls
     private bool gamePaused;
@@ -51,6 +52,10 @@ public class Leela : MonoBehaviour {
     // UI
     [SerializeField]
     private GameObject pausePanel;
+    [SerializeField]
+    private GameObject winPanel;
+    [SerializeField]
+    private GameObject gameOverPanel;
 
     void Start() {
         // Set initial ringVelocity for each ring
@@ -65,7 +70,7 @@ public class Leela : MonoBehaviour {
     }
 
     void Update(){
-        // Game Pause
+        // Game Paused
         if (gamePaused) {
             Time.timeScale = 0;
             pausePanel.gameObject.SetActive(true);
@@ -83,6 +88,15 @@ public class Leela : MonoBehaviour {
             if (Input.GetButtonDown("Cancel")){
 				gamePaused = true;
 			}
+
+            if (winTime != 0) {
+                if (Input.GetButtonDown("Restart")) {
+                    Restart();
+                } else if (Input.GetButtonDown("Quit")) {
+                    Quit();
+                }
+            }
+
             // Ring Choice
             if (debounce <= 0) {
                 if (Input.GetAxis("Vertical") > 0.0f) {
@@ -145,8 +159,12 @@ public class Leela : MonoBehaviour {
                 }
             }
 
-            // TODO: OVERSPEED
-                // If ring goes beyond ringMax, gameover.
+            // If ring goes beyond ringMax, gameover.
+            if (CheckOverSpeed()) {
+                gameOverPanel.gameObject.SetActive(true);
+                winTime = Time.time;
+                Time.timeScale = 0;
+            }
 
             // Try to Lock
             if (lockDebounce <= 0) {
@@ -184,8 +202,15 @@ public class Leela : MonoBehaviour {
         // Break previous ring if Velocity is greater than speedWiggle
 
         // Check for Win Condition
-        if (CheckWinCondition ()) {
-            Debug.Log("Win condition set");
+        if (CheckWinCondition () & winTime == 0) {
+            winTime = Time.time;
+            winGravity = Mathf.Abs(ringVelocity[0])/45;
+            Debug.Log("Win condition set! Final time: " + winTime + " seconds. Final Gravity: " + winGravity + " Martian G " + winGravity * .38 + " Earth G!");
+
+            // Change lights to win condition
+
+            // Display win panel
+            winPanel.gameObject.SetActive(true);
         }
 
         // Update Rings
@@ -217,6 +242,15 @@ public class Leela : MonoBehaviour {
                 return false;
         }
         return true;
+    }
+
+    private bool CheckOverSpeed() {
+        for (int i = 0; i < ringVelocity.GetLength(0); i++) {
+            if (Mathf.Abs(ringVelocity[i]) >= ringMax)
+                return true;
+        }
+        return false;
+
     }
 
     void Restart() {

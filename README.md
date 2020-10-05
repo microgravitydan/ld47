@@ -34,19 +34,10 @@ The second ring has to match the speed and position of the first ring before you
     * Menu Screen
         * New Game
         * Credits
-    * Pause Screen
-        * Start Over
-        * Quit
     * Sounds
         * Lock Success
         * Lock Fail
         * Beacons
-    * Game Over
-        * You blew it all apart
-    * Win Condition
-        * Time to complete
-        * Gravity Calculation
-        * Credits
 ### Desired
     * Features 
         * High Scores
