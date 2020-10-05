@@ -26,16 +26,3 @@ Before we start, please heed some warnings. Mainly one: DO NOT OVERSPEED THE RIN
 Start with the first ring and lock in a comfortable velocity to maintain the artificial gravity. The first ring is dead simple because the automated systems already set that rotation for you. A red light will indicate things are set and you can move on to the next ring.
 
 The second ring has to match the speed and position of the first ring before you can lock it in place. That light you see on each ring is right above the bulkheads that you will need to line up. If it can lock on, the light will turn green. Mash that lock button and if the speeds are close, you will have a nice and comforting red light to confirm you are one step closer to finishing your task. Get a red lock on all 8 rings and you can call it. When it is all done, you can tell Pat to go run laps in ring four while you hope the releases pop again.
-
-## ToDo
-### Required
-### Desired
-    * Features 
-        * High Scores
-        * Introduction cutscene (option to replay in main menu)
-        * MicroGravity Studios Splash Screen or clip
-    * Graphics
-        * Fade stars on sunny side
-        * Improved Hologram
-        * Camera Sway
-        * Ring Texture Shader
