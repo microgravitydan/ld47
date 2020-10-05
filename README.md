@@ -29,8 +29,6 @@ The second ring has to match the speed and position of the first ring before you
 
 ## ToDo
 ### Required
-    * Graphics
-        * Hologram color changes
     * Sounds
         * Lock Success
         * Lock Fail

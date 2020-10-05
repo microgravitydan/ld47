@@ -202,6 +202,8 @@ public class Leela : MonoBehaviour {
                         } else {
                             Debug.Log("Spacebar, Too fast");
                             ringStatus[ringSelected-1] = "Spinning";
+                            ringLocked[ringSelected-1] = false;
+                            ringVelocity[ringSelected-1] = ringVelocity[ringSelected];
                         }
                     } else if (ringStatus[ringSelected] == "Locked") {
                         ringStatus[ringSelected] = "Selected";
