@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 081cde783166948719fb75152fc349f8
+  - enabled: 1
+    path: Assets/Scenes/Sagittarius240.unity
+    guid: e91172ebc170d4e56856c4f4ba34e3a3
   m_configObjects: {}

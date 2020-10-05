@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 public class Ring : MonoBehaviour{
     [SerializeField]
@@ -20,7 +19,6 @@ public class Ring : MonoBehaviour{
 
         m_Ring.AddListener(delegate{RingPosition(ringAngleSet);});
         m_Ring.AddListener(delegate{RingStatus(ringStatusSet);});
-        
     }
 
     void Update(){

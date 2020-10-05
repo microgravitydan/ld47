@@ -259,6 +259,6 @@ public class Leela : MonoBehaviour {
     }
 
     void Quit () {
-		Application.Quit();
+		SceneManager.LoadScene("MainMenu");
 	}
 }

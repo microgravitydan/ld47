@@ -31,9 +31,6 @@ The second ring has to match the speed and position of the first ring before you
 ### Required
     * Graphics
         * Hologram color changes
-    * Menu Screen
-        * New Game
-        * Credits
     * Sounds
         * Lock Success
         * Lock Fail
