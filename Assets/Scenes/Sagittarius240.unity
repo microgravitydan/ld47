@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 15581020}
   - component: {fileID: 15581018}
   m_Layer: 0
-  m_Name: Ring 3
+  m_Name: RingUI 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,10 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1730910021}
+  ringIndicator: {fileID: 15581016}
 --- !u!23 &15581020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 50434954}
   - component: {fileID: 50434952}
   m_Layer: 0
-  m_Name: Ring 1
+  m_Name: RingUI 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,10 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1420194402}
+  ringIndicator: {fileID: 50434950}
 --- !u!23 &50434954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 189499345}
   - component: {fileID: 189499343}
   m_Layer: 0
-  m_Name: Ring 7
+  m_Name: RingUI 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,10 +521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1908906593}
+  ringIndicator: {fileID: 189499341}
 --- !u!23 &189499345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 352840597}
   - component: {fileID: 352840598}
   m_Layer: 0
-  m_Name: Ring 6
+  m_Name: Ring 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -614,15 +614,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 352840596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: -25
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 6
-  ringUI: {fileID: 441811284}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1777174692}
 --- !u!1 &365271927
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +791,7 @@ GameObject:
   - component: {fileID: 441811288}
   - component: {fileID: 441811286}
   m_Layer: 0
-  m_Name: Ring 6
+  m_Name: RingUI 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,10 +824,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1427135961}
+  ringIndicator: {fileID: 441811284}
 --- !u!23 &441811288
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -889,7 +886,7 @@ GameObject:
   - component: {fileID: 467698375}
   - component: {fileID: 467698376}
   m_Layer: 0
-  m_Name: Ring 2
+  m_Name: Ring 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -920,15 +917,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 467698374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: 9
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 2
-  ringUI: {fileID: 2105518031}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 592466767}
 --- !u!1 &543909171
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,8 +932,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543909172}
+  - component: {fileID: 543909173}
   m_Layer: 0
-  m_Name: Ship
+  m_Name: Sagittarius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,6 +962,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &543909173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543909171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba54bf2fe1ed4f709fdcc5ed266e317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ring:
+  - {fileID: 1781579517}
+  - {fileID: 467698374}
+  - {fileID: 788658925}
+  - {fileID: 2028674013}
+  - {fileID: 1440830560}
+  - {fileID: 352840596}
+  - {fileID: 585998516}
+  - {fileID: 1880355207}
+  ringUI:
+  - {fileID: 50434950}
+  - {fileID: 2105518031}
+  - {fileID: 15581016}
+  - {fileID: 1129899516}
+  - {fileID: 1377611915}
+  - {fileID: 441811284}
+  - {fileID: 189499341}
+  - {fileID: 1027612987}
+  ringVelocity:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  ringStartingPeriod:
+  - -8
+  - -10
+  - -15
+  - -20
+  - 25
+  - 9
+  - 5
+  - 2
+  ringPosition:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  ringStatus:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  ringLocked: 0000000000000000
+  angleWiggle: 5
+  speedWiggle: 0.2
+  ringSelected: 0
+  thrustAmount: 0.1
 --- !u!1 &568748547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1136,7 @@ GameObject:
   - component: {fileID: 585998517}
   - component: {fileID: 585998518}
   m_Layer: 0
-  m_Name: Ring 7
+  m_Name: Ring 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,15 +1167,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 585998516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: -5
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 7
-  ringUI: {fileID: 189499341}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 649205004}
 --- !u!1 &592466765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1725,7 @@ GameObject:
   - component: {fileID: 788658926}
   - component: {fileID: 788658927}
   m_Layer: 0
-  m_Name: Ring 3
+  m_Name: Ring 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1693,15 +1756,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 788658925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: 12
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 3
-  ringUI: {fileID: 15581016}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 632601159}
 --- !u!1 &819497742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,7 +1855,7 @@ GameObject:
   - component: {fileID: 1027612991}
   - component: {fileID: 1027612989}
   m_Layer: 0
-  m_Name: Ring 8
+  m_Name: RingUI 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1828,10 +1888,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1205386648}
+  ringIndicator: {fileID: 1027612987}
 --- !u!23 &1027612991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1972,7 +2032,7 @@ GameObject:
   - component: {fileID: 1129899520}
   - component: {fileID: 1129899518}
   m_Layer: 0
-  m_Name: Ring 4
+  m_Name: RingUI 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2005,10 +2065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1717566632}
+  ringIndicator: {fileID: 1129899516}
 --- !u!23 &1129899520
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2359,7 +2419,7 @@ GameObject:
   - component: {fileID: 1377611919}
   - component: {fileID: 1377611917}
   m_Layer: 0
-  m_Name: Ring 5
+  m_Name: RingUI 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2392,10 +2452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1455527316}
+  ringIndicator: {fileID: 1377611915}
 --- !u!23 &1377611919
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2704,8 +2764,6 @@ GameObject:
   - component: {fileID: 1435768060}
   - component: {fileID: 1435768059}
   - component: {fileID: 1435768058}
-  - component: {fileID: 1435768057}
-  - component: {fileID: 1435768061}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Untagged
@@ -2713,19 +2771,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &1435768057
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435768056}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1435768058
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2787,37 +2832,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1435768061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435768056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa518e34cc4ce452792266d38ca0b456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ringChoice: 1
-  ring1: {fileID: 1781579517}
-  ring2: {fileID: 467698374}
-  ring3: {fileID: 788658925}
-  ring4: {fileID: 2028674013}
-  ring5: {fileID: 1440830560}
-  ring6: {fileID: 352840596}
-  ring7: {fileID: 585998516}
-  ring8: {fileID: 1880355207}
-  ringUI1: {fileID: 0}
-  ringUI2: {fileID: 0}
-  ringUI3: {fileID: 0}
-  ringUI4: {fileID: 0}
-  ringUI5: {fileID: 0}
-  ringUI6: {fileID: 0}
-  ringUI7: {fileID: 0}
-  ringUI8: {fileID: 0}
-  debounce: 0
-  debounceAmount: 0.2
 --- !u!1 &1440830560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,7 +2843,7 @@ GameObject:
   - component: {fileID: 1440830561}
   - component: {fileID: 1440830562}
   m_Layer: 0
-  m_Name: Ring 5
+  m_Name: Ring 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2860,15 +2874,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440830560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: -45
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 5
-  ringUI: {fileID: 1377611915}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1678107773}
 --- !u!1 &1455527316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,7 +3882,7 @@ GameObject:
   - component: {fileID: 1781579518}
   - component: {fileID: 1781579519}
   m_Layer: 0
-  m_Name: Ring 1
+  m_Name: Ring 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3903,15 +3914,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1781579517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: 8
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 1
-  ringUI: {fileID: 50434950}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1414650159}
 --- !u!1 &1880355207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3923,7 +3931,7 @@ GameObject:
   - component: {fileID: 1880355208}
   - component: {fileID: 1880355209}
   m_Layer: 0
-  m_Name: Ring 8
+  m_Name: Ring 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3954,15 +3962,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1880355207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: -2
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 8
-  ringUI: {fileID: 1027612987}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 568748549}
 --- !u!1 &1908069225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,7 +4253,7 @@ GameObject:
   - component: {fileID: 2028674014}
   - component: {fileID: 2028674015}
   m_Layer: 0
-  m_Name: Ring 4
+  m_Name: Ring 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4279,15 +4284,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2028674013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f88f1ffe6284c91a2c740feae55f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 1da5e6f45c29c404daf3b7d4a270212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPeriod: 60
-  xRotAxis: 1
-  yRotAxis: 0
-  zRotAxis: 0
-  ringNumber: 4
-  ringUI: {fileID: 1129899516}
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1359424594}
 --- !u!1 &2077366023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,7 +4383,7 @@ GameObject:
   - component: {fileID: 2105518035}
   - component: {fileID: 2105518033}
   m_Layer: 0
-  m_Name: Ring 2
+  m_Name: RingUI 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4414,10 +4416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd7ea3c9d388409f800084f02fda6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotAxis: 0
-  yRotAxis: 1
-  zRotAxis: 0
-  ringAngle: 0
+  ringAngleSet: 0
+  ringStatusSet: 
+  lightIndicator: {fileID: 1253405599}
+  ringIndicator: {fileID: 2105518031}
 --- !u!23 &2105518035
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4476,7 +4478,7 @@ GameObject:
   - component: {fileID: 2147386793}
   - component: {fileID: 2147386794}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: UI Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
