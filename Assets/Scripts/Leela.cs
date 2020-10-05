@@ -42,6 +42,7 @@ public class Leela : MonoBehaviour {
     // Score Tracking
     private float winTime = 0;
     private float winGravity;
+    private float winThrust;
 
     // Controls
     private bool gamePaused;
@@ -141,8 +142,10 @@ public class Leela : MonoBehaviour {
             if (ringLocked[ringSelected] == false) {
                 if (Input.GetAxis("Horizontal") > 0.02f) {
                     ringVelocity[ringSelected] += thrustAmount;
+                    winThrust += thrustAmount;
                 } else if (Input.GetAxis("Horizontal") < -0.02f) {
                     ringVelocity[ringSelected] -= thrustAmount;
+                    winThrust += thrustAmount;
                 } else {};
             }
 
@@ -255,7 +258,7 @@ public class Leela : MonoBehaviour {
             // Change lights to win condition
 
             // Display win panel
-            winScores.text = "Scores:\nTime to Complete: " + Mathf.Floor(winTime) + " seconds\nMars Equivalent Gravity: " + winGravity + " G\nEarth Equivalent Gravity: " + winGravity * .38 + " G";
+            winScores.text = "Scores:\nTime to Complete: " + Mathf.Floor(winTime) + " seconds\nMars Equivalent Gravity: " + winGravity + " G\nEarth Equivalent Gravity: " + winGravity * .38 + " G\nThrust expended: " + Mathf.Floor(winThrust) + " Degrees/second";
             winPanel.gameObject.SetActive(true);
             Screen.lockCursor = false;
         }
