@@ -31,7 +31,7 @@ public class Ring : MonoBehaviour{
 
     void RingStatus(string ringStatusSet) {
         // Set ring colors
-        if (ringStatusSet =="Locked") {
+        if (ringStatusSet =="Locked" || ringStatusSet =="LockSelected") {
             lightIndicator.color = Color.red;
             } else if (ringStatusSet == "Lockable") {
             // Set Light to Green

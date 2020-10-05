@@ -136,26 +136,39 @@ public class Leela : MonoBehaviour {
             // Determine State
             // For ring 0
             if (ringLocked[0] == false) {
-                if (Mathf.Abs(ringVelocity[0]) >= ringOneMin & Mathf.Abs(ringVelocity[0]) <= ringOneMax) {
-                    ringStatus[0] = "Lockable";
-                } else if (ringSelected == 0) {
-                    ringStatus[0] = "Selected";
+                if (ringSelected == 0) {
+                    if (Mathf.Abs(ringVelocity[0]) >= ringOneMin & Mathf.Abs(ringVelocity[0]) <= ringOneMax) {
+                        ringStatus[0] = "Lockable";
+                    } else {
+                        ringStatus[0] = "Selected";
+                    }
                 } else {
                     ringStatus[0] = "Spinning";
                 }
+            } else {
+                if (ringSelected == 0) {
+                    ringStatus[0] = "LockSelected";
+                } else {
+                ringStatus[0] = "Locked";
+                }
             }
+
             // For rings 1-7
             for (int i = 1; i < 8; i++) {
-                if (ringLocked[i-1] & ringLocked[i] == false) {
-                    if (ringPosition[i] > ringPosition[i-1] - angleWiggle & ringPosition[i] < ringPosition[i-1] + angleWiggle) {
+                if (i == ringSelected) {
+                    if (ringPosition[i] > ringPosition[i-1] - angleWiggle & ringPosition[i] < ringPosition[i-1] + angleWiggle & ringLocked[i-1] & ringLocked[i] == false) {
                         ringStatus[i] = "Lockable";
-                    } else if (i == ringSelected) {
+                    } else if (ringLocked[i]) {
+                        ringStatus[i] = "LockSelected";
+                    } else {
                         ringStatus[i] = "Selected";
+                    }
+                } else {
+                    if (ringLocked[i]) {
+                        ringStatus[i] = "Locked";
                     } else {
                         ringStatus[i] = "Spinning";
                     }
-                } else if (ringLocked[i] == true) {
-                    ringStatus[i] = "Locked";
                 }
             }
 
@@ -225,6 +238,7 @@ public class Leela : MonoBehaviour {
         for (int i = 0; i < 8; i++) {
             ringUI[i].SendMessage("RingPosition", ringPosition[i]);
             // Send ring status colors
+            ringUI[i].SendMessage("RingStatus", ringStatus[i]);
         }
 
         // Update debounce

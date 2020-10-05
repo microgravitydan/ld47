@@ -45,6 +45,12 @@ public class RingUI : MonoBehaviour {
             ringRenderer.material.SetColor("_BaseColor", Color.cyan);
             ringRenderer.material.SetColor("Color_4562A436", Color.cyan);
             ringRenderer.material.SetColor("Color_AC1E9C59", Color.cyan);
+        } else if (ringStatusSet == "LockSelected") {
+            lightRenderer.material.SetColor("_Color", Color.red);
+            ringRenderer.material.SetColor("_Color", Color.yellow);
+            ringRenderer.material.SetColor("_BaseColor", Color.yellow);
+            ringRenderer.material.SetColor("Color_4562A436", Color.yellow);
+            ringRenderer.material.SetColor("Color_AC1E9C59", Color.yellow);
         }else if (ringStatusSet == "Lockable") {
             lightRenderer.material.SetColor("_Color", Color.green);
             ringRenderer.material.SetColor("_Color", Color.green);
@@ -58,7 +64,7 @@ public class RingUI : MonoBehaviour {
             ringRenderer.material.SetColor("Color_4562A436", Color.yellow);
             ringRenderer.material.SetColor("Color_AC1E9C59", Color.yellow);
         } else {
-            lightRenderer.material.SetColor("_Color", Color.yellow);
+            lightRenderer.material.SetColor("_Color", Color.gray);
             ringRenderer.material.SetColor("_Color", Color.cyan);
             ringRenderer.material.SetColor("_BaseColor", Color.cyan);
             ringRenderer.material.SetColor("Color_4562A436", Color.cyan);
