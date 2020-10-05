@@ -32,7 +32,6 @@ The second ring has to match the speed and position of the first ring before you
     * Sounds
         * Lock Success
         * Lock Fail
-        * Beacons
 ### Desired
     * Features 
         * High Scores
