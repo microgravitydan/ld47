@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Leela : MonoBehaviour {
     // Rings
@@ -55,6 +56,8 @@ public class Leela : MonoBehaviour {
     [SerializeField]
     private GameObject winPanel;
     [SerializeField]
+    private TextMeshProUGUI winScores;
+    [SerializeField]
     private GameObject gameOverPanel;
 
     // Audio
@@ -65,13 +68,20 @@ public class Leela : MonoBehaviour {
     [SerializeField]
     private AudioSource audioSource;
 
+    UnityEvent m_Leela;
 
     void Start() {
+        if (m_Leela == null)
+            m_Leela = new UnityEvent();
+
+        m_Leela.AddListener(Resume);
+        m_Leela.AddListener(Restart);
+        m_Leela.AddListener(Quit);
+
         // Set initial ringVelocity for each ring
         for (int i = 0; i < 8; i++) {
             ringVelocity[i] = 360 / ringStartingPeriod[i];
         }
-
     }
 
     void Awake() {
@@ -83,6 +93,7 @@ public class Leela : MonoBehaviour {
         if (gamePaused) {
             Time.timeScale = 0;
             pausePanel.gameObject.SetActive(true);
+            Screen.lockCursor = true;
             if (Input.GetButtonDown("Cancel")){
 				gamePaused = false;
 			} else if (Input.GetButtonDown("Restart")) {
@@ -99,11 +110,14 @@ public class Leela : MonoBehaviour {
 			}
 
             if (winTime != 0) {
+                Screen.lockCursor = false;
                 if (Input.GetButtonDown("Restart")) {
                     Restart();
                 } else if (Input.GetButtonDown("Quit")) {
                     Quit();
                 }
+            } else {
+                Screen.lockCursor = true;
             }
 
             // Ring Choice
@@ -186,6 +200,7 @@ public class Leela : MonoBehaviour {
                 gameOverPanel.gameObject.SetActive(true);
                 winTime = Time.time;
                 Time.timeScale = 0;
+                Screen.lockCursor = false;
             }
 
             // Try to Lock
@@ -240,7 +255,9 @@ public class Leela : MonoBehaviour {
             // Change lights to win condition
 
             // Display win panel
+            winScores.text = "Scores:\nTime to Complete: " + Mathf.Floor(winTime) + " seconds\nMars Equivalent Gravity: " + winGravity + " G\nEarth Equivalent Gravity: " + winGravity * .38 + " G";
             winPanel.gameObject.SetActive(true);
+            Screen.lockCursor = false;
         }
 
         // Update Rings
@@ -282,6 +299,10 @@ public class Leela : MonoBehaviour {
         }
         return false;
 
+    }
+
+    void Resume() {
+        gamePaused = false;
     }
 
     void Restart() {

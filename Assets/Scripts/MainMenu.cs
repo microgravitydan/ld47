@@ -24,10 +24,10 @@ public class MainMenu : MonoBehaviour {
         m_MainMenu.AddListener(Story);
         m_MainMenu.AddListener(Credits);
         m_MainMenu.AddListener(Quit);
-
     }
 
     void Update() {
+        Screen.lockCursor = false;
         if (Input.GetButtonDown("Cancel")){
 			Back();
 		} else if (Input.GetButtonDown("Quit")) {
